@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TipCalculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="subtotal_label">Sub Total:</string>
+    <string name="tip_initial">(10%)</string>
+    <string name="headCount_initial">(1)</string>
+    <string name="tip">Tip:</string>
+    <string name="total">Total:</string>
+    <string name="zero">0</string>
+    <string name="thirty">30</string>
+    <string name="split">Split:</string>
+    <string name="one">1</string>
+    <string name="fifteen">15</string>
+    <string name="summary">Amount per person:</string>
+    
+</resources>
+

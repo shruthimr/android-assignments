@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tipcalculator.TipCalculator" >
+
+    <TextView
+        android:id="@+id/tvSubTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp"
+        android:text="@string/subtotal_label" />
+
+    <EditText
+        android:id="@+id/etSubTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSubTotalLabel"
+        android:layout_alignBottom="@+id/tvSubTotalLabel"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tvSubTotalLabel"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tvTipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipPercentValue"
+        android:layout_alignBottom="@+id/tvTipPercentValue"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tip"/>
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipSliderLabel"
+        android:layout_alignLeft="@+id/etSubTotal"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvTotalLabel"
+        android:layout_alignLeft="@+id/tvTip"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/tvTipMaxLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvTipInitialLabel"
+        android:layout_alignRight="@+id/sbTipSlider"
+        android:text="@string/thirty" />
+
+    <TextView
+        android:id="@+id/tvBlackLine"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_above="@+id/sbTipSlider"
+        android:layout_alignLeft="@+id/tvTipLabel"
+        android:layout_alignRight="@+id/etSubTotal"
+        android:layout_marginBottom="30dp"
+        android:background="#000000" />
+
+    <TextView
+        android:id="@+id/tvSplitMaxLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvTipMaxLabel"
+        android:layout_below="@+id/sbSplit"
+        android:text="@string/fifteen" />
+
+    <TextView
+        android:id="@+id/tvSplitMinLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSplitMaxLabel"
+        android:layout_alignBottom="@+id/tvSplitMaxLabel"
+        android:layout_alignLeft="@+id/tvTipInitialLabel"
+        android:text="@string/one" />
+
+    <TextView
+        android:id="@+id/tvSplitPerHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvSummary"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/tvSummary"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSplitLabel"
+        android:layout_below="@+id/tvSplitMinLabel"
+        android:layout_marginTop="50dp"
+        android:text="@string/summary" />
+
+    <TextView
+        android:id="@+id/tvSplitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/sbSplit"
+        android:layout_toLeftOf="@+id/tvSplitMinLabel"
+        android:paddingTop="5dp"
+        android:text="@string/split" />
+
+    <TextView
+        android:id="@+id/tvTipInitialLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sbSplit"
+        android:layout_alignRight="@+id/tvTotalLabel"
+        android:layout_centerVertical="true"
+        android:text="@string/zero" />
+
+    <SeekBar
+        android:id="@+id/sbTipSlider"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvTipInitialLabel"
+        android:layout_alignLeft="@+id/tvTotalLabel"
+        android:max="30"
+        android:progress="10" />
+    
+    <SeekBar
+        android:id="@+id/sbSplit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvTipSliderLabel"
+        android:layout_below="@+id/tvTipMaxLabel"
+        android:max="15"
+        android:progress="1" />
+
+    <TextView
+        android:id="@+id/tvTipPercentValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sbTipSlider"
+        android:layout_alignParentRight="true"
+        android:text="@string/tip_initial" />
+
+    <TextView
+        android:id="@+id/tvTipSliderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvSubTotalLabel"
+        android:layout_below="@+id/etSubTotal"
+        android:layout_marginTop="24dp"
+        android:text="@string/tip" />
+
+    <TextView
+        android:id="@+id/tvTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTipSliderLabel"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/etSubTotal"
+        android:text="@string/total" />
+
+    <TextView
+        android:id="@+id/tvSplitValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sbSplit"
+        android:layout_alignRight="@+id/tvTipPercentValue"
+        android:text="@string/headCount_initial" />
+
+</RelativeLayout>
