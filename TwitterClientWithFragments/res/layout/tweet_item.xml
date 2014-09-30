@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"  >
+	
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:text="@string/foo_label" 
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvScreenName"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:text="@string/body_label" 
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"
+        android:autoLink="web"       
+        android:paddingTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingRight="10dp"
+        android:text="@string/timestamp_label" />
+
+    <ImageView
+        android:id="@+id/ivReply"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignLeft="@+id/tvBody"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvBody"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp"
+        android:src="@drawable/ic_reply" />
+
+    <ImageView
+        android:id="@+id/ivRetweet"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="8dp"
+        android:src="@drawable/ic_retweet" />
+
+    <TextView
+        android:id="@+id/tvRetweetCount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_toRightOf="@+id/ivRetweet"
+        android:paddingBottom="8dp"
+        android:text="20"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/ivStar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_toLeftOf="@+id/tvTimeStamp"
+        android:paddingBottom="8dp"
+        android:src="@drawable/ic_star" />
+
+    <TextView
+        android:id="@+id/tvStarCount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tvBody"
+        android:layout_toRightOf="@+id/ivStar"
+        android:paddingBottom="8dp"
+        android:text="12"
+        android:textSize="10sp" />
+
+</RelativeLayout>

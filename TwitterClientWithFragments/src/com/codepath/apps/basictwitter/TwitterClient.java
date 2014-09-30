@@ -57,6 +57,44 @@ public class TwitterClient extends OAuthBaseClient {
 		}
 	}
 	
+	public void getMentionsTimeline(JsonHttpResponseHandler handler, String sinceId, String maxId, Boolean reachability) {
+		
+		if(reachability)
+		{	
+			final String apiUrl = getApiUrl("statuses/mentions_timeline.json");
+			final RequestParams params = new RequestParams();
+			if (sinceId != null) {
+				params.put("since_id", sinceId);
+			}
+			if (maxId != null) {
+				params.put("max_id", maxId);
+			}
+			final boolean haveParams = !(sinceId == null && maxId == null);
+			client.get(apiUrl, haveParams ? params : null, handler);
+		}
+		else
+		{
+			if(maxId == null)
+				handler.onSuccess(Tweet.getSavedTweets(null));
+			else
+				handler.onSuccess(Tweet.getSavedTweets(Long.parseLong(maxId)));
+		}
+	}
+	
+	public void getUserTimeline(JsonHttpResponseHandler handler , String uid) 
+	{		
+		final String apiUrl = getApiUrl("statuses/user_timeline.json");
+		final RequestParams params = new RequestParams();
+		params.put("user_id", uid);
+		final boolean haveParams = !(uid == null);
+		client.get(apiUrl, haveParams ? params : null, handler);
+	}
+	
+	public void getMyInfo(JsonHttpResponseHandler handler) 
+	{		
+		final String apiUrl = getApiUrl("account/verify_credentials.json");
+		client.get(apiUrl, null, handler);
+	}
 	
 	public void postTweet(JsonHttpResponseHandler handler, String status) {
 		final String apiUrl = getApiUrl("statuses/update.json");
